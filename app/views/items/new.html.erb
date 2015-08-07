@@ -1,0 +1,25 @@
+<h1>create a new item</h1>
+
+<div id='create_item'>
+  <%= form_for [@user, @item] do |f| %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <div>
+      <%= f.label :starting_time %>
+      <%= f.date_field :start, :placeholder => "YYYY/MM/DD" %>
+    </div>
+    <div>
+      <%= f.label :ending_time %>
+      <%= f.date_field :end, :placeholder => "YYYY/MM/DD" %>
+    </div>
+    <div>
+      <%= f.submit 'List Item' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<h1>Profile for <%= @user.username %></h1>
+
+<%= button_to 'List a new item for sale', new_user_item_path(@user.id), method: :get %>
+
+<% if @items %>
+  <ol>
+  <% @items.each do |item| %>
+    <li><%= item.title %></li>
+    <%= button_to 'view', item_path(item), method: :get %>
+    <%= button_to 'edit', edit_user_item_path(@user, item), method: :get %>
+    <%= button_to 'delete', item_path(item), method: :delete %>
+  <% end %>
+  </ol>
+<% end %>

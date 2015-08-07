@@ -1,0 +1,10 @@
+<h1>Take A Look At All The Items Listed For Sale</h1>
+
+<% if @items %>
+  <ol>
+    <% @items.each do |item| %>
+      <li><%= item.title %></li>
+      <%= button_to 'view', item_path(item), method: :get %>
+    <% end %>
+  </ol>
+<% end %>

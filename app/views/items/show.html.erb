@@ -1,0 +1,27 @@
+<h1>Show this item info</h1>
+
+
+<div id='ajax spot?'>
+</div>
+
+
+<div>
+  <h3>Information about: <%= @item.title %>
+</div>
+
+<div>
+  Description: <%= @item.description %>
+</div>
+<div>
+Start Time: <%= @item.start %>
+</div>
+<div>
+End Time: <%= @item.end %>
+</div>
+
+<div>
+
+  <% if logged_in? && session[:user_id] != @item.user_id %>
+    <%= button_to 'Bid', new_item_bid_path(@item), method: :get, class: 'bid' %>
+  <% end %>
+</div>
